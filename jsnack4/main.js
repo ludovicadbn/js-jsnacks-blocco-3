@@ -27,7 +27,7 @@ let userName = (prompt("Inserisci il tuo nome"))
 let invitatoTrovato = false;
 let i = 0;
 
-while (i < nomi.length){
+while (i < nomi.length && invitatoTrovato == false){
   if (nomi[i] == userName) {
     invitatoTrovato = true;
   }
