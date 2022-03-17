@@ -23,34 +23,19 @@ const nomi = [
   "Seth"
 ]
 
-const cognomi = [
-  "Kim",
-  "Bishop",
-  "Brooks",
-  "Brown",
-  "Vang",
-  "Owens",
-  "Mendoza",
-  "Weiss",
-  "Bernard",
-  "Johnson",
-  "Martin",
-  "Wells",
-  "Fox",
-  "Thompson",
-  "Meyer",
-  "Alvarez",
-  "Stanley",
-  "Williams",
-  "Cantrell",
-  "Davis"
-]
+let userName = (prompt("Inserisci il tuo nome"))
+let invitatoTrovato = false;
+let i = 0;
 
-let nomiFalsi = []
-let num = Number(prompt("Inserisci il numero di nomi e cognomi falsi da generare"))
-
-for (i = 0; i < num; i++){
-  nomiFalsi.push(nomi[Math.floor(Math.random() * nomi.length + 1)] + " " + cognomi[Math.floor(Math.random() * cognomi.length + 1)]);
+while (i < nomi.length){
+  if (nomi[i] == userName) {
+    invitatoTrovato = true;
+  }
+  i++;
 }
 
-document.getElementById("result").innerHTML = JSON.stringify(nomiFalsi);
+if (invitatoTrovato == true){
+  document.getElementById("result").innerHTML = "Puoi entrare";
+} else {
+  document.getElementById("result").innerHTML = "Non puoi entrare"
+}
