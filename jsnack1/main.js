@@ -2,7 +2,11 @@ let arr = [];
 let sum = 0;
 
 while (sum <= 50){
-  const num = Number(prompt("Inserisci un numero"));
+  let num = Number(prompt("Inserisci un numero"));
+  while (num > 50){
+    alert("Inserisci un numero inferiore di 50");
+    num = Number(prompt("Inserisci un numero"));
+  }
   arr.push(num);
   sum += num;
   if (sum > 50){
